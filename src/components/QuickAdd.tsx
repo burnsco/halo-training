@@ -1,4 +1,5 @@
 import { ShoppingBag } from "lucide-react";
+import type React from "react";
 import { addToCart } from "../store/cart";
 import type { Product } from "../data";
 

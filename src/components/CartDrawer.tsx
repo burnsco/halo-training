@@ -60,6 +60,7 @@ export const CartDrawer: React.FC = () => {
                         </h3>
                         <button
                           type="button"
+                          aria-label={`Remove ${item.name} from cart`}
                           onClick={() => removeFromCart(item.id)}
                           className="text-white/30 hover:text-brand-secondary transition-colors"
                         >
