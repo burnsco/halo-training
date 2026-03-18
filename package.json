@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "deploy": "wrangler deploy",
+    "deploy": "bun run build && wrangler deploy",
     "deploy:dry-run": "wrangler deploy --dry-run",
+    "cf:status": "../scripts/cf-portfolio.sh status halo-training",
     "preview": "astro preview",
     "check": "astro check",
     "lint": "oxlint",
