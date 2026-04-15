@@ -4,49 +4,32 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "deploy": "bun run build && wrangler deploy",
-    "deploy:dry-run": "wrangler deploy --dry-run",
-    "cf:status": "../scripts/cf-portfolio.sh status halo-training",
-    "preview": "astro preview",
-    "check": "astro check",
-    "lint": "oxlint",
-    "format": "oxfmt",
-    "prepare": "husky",
-    "lint:fix": "oxlint --fix . && oxfmt"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "preview": "bun run build && wrangler dev",
+    "deploy": "bun run build && wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/cloudflare": "^13.1.8",
-    "@astrojs/react": "^5.0.3",
-    "@nanostores/react": "^1.1.0",
-    "astro": "^6.1.5",
-    "lucide-react": "^1.7.0",
-    "nanostores": "^1.2.0",
+    "@cloudflare/vite-plugin": "^1.32.3",
+    "lucide-react": "^0.575.0",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.1",
+    "wrangler": "^4.83.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.12",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^25.5.2",
+    "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "autoprefixer": "^10.4.27",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0",
-    "postcss": "^8.5.9",
+    "@vitejs/plugin-react": "^5.2.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
     "tailwindcss": "^4.2.2",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.8"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "oxlint --fix",
-      "oxfmt"
-    ]
+    "typescript": "~5.9.3",
+    "vite": "^7.3.2"
   }
 }
