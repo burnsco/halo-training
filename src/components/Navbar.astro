@@ -9,7 +9,7 @@ const pathname = Astro.url.pathname;
 
 <nav class="fixed w-full top-0 px-6 py-4 flex justify-between items-center z-50 mix-blend-difference bg-transparent backdrop-blur-none border-b border-transparent">
   <div class="flex items-center gap-8">
-    <MenuButton client:load />
+    <MenuButton client:idle />
 
     <div class="hidden lg:flex gap-8">
       {navItems.map((item) => (
@@ -40,5 +40,5 @@ const pathname = Astro.url.pathname;
     </span>
   </a>
 
-  <NavbarActions client:load />
+  <NavbarActions client:idle />
 </nav>
